@@ -1,0 +1,66 @@
+<%- include("partials/header"); -%>
+
+  <h1>Home</h1>
+  <p> Hello I am Aryan . Welcome to Daily Blog !<br><br>
+
+Discover the latest in technology, innovation, and beyond on Daily Blog. Dive into the fascinating world of tech with our carefully curated articles, insightful reviews, and expert analysis. We're a one-stop destination for all things tech, bringing you updates and trends from the ever-evolving tech landscape.<br><br>
+
+What sets Daily Blog apart is our dedication to providing quality content that matters. Our front-end, crafted with HTML, CSS (Bootstrap), and Javascript, ensures a smooth and intuitive user experience. Meanwhile, the robust back-end powered by Node.js and MongoDB guarantees seamless performance and reliability.<br><br>
+
+Stay informed and entertained as we cover a wide range of topics, including AI, cybersecurity, software development, gadgets, and much more. Whether you're a tech enthusiast, professional, or just curious about the future, Daily Blog has something for everyone.<br><br>
+
+Join our tech-savvy community today and be a part of the conversation. Explore, learn, and engage with Daily Blog - where tech insights come to life. </p><br><br>
+
+  <div class="container1">
+    <h1>Facts of the day</h1>
+    <div id="facts" class="carousel slide posts" data-ride="carousel">
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="item active">
+          <h4>The design of a website plays an important role. According to Nielsen Norman Group, most of the users
+            scan the website and very little read the text. So make the layout clean that can engage the users</h4>
+        </div>
+
+        <div class="item">
+          <h4>Search engines read your website code. Search engines pick up the ranking from different HTML elements. So writing the code for your
+            website you should focus on the HTML elements such as HTML tags, Meta characters, headers, and body.</h4>
+
+        </div>
+
+        <div class="item">
+          <h4>Where the images and videos make your website good but there is also an impact on it. About 74%of the audience is influenced by videos
+            but excessive use of videos makes the website slow which makes the user frustrated and they leave the website.</h4>
+
+        </div>
+
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="sliderF left carousel-control" href="#facts" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+
+      </a>
+      <a class="sliderF right carousel-control" href="#facts" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+
+      </a>
+    </div>
+  </div><br><br>
+
+
+  <h1>Posts</h1>
+  <% posts.forEach(function(post){ %>
+  <div class="posts">
+    <h1 class="postTitle"><%=post.title%></h1>
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+  </div><br>
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
